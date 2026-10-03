@@ -650,13 +650,21 @@ create policy avatars_delete on storage.objects
 -- 9. Founder / role assignment helper
 --    Run AFTER creating the six users in Authentication > Users.
 --    Replace the emails with the real account emails.
+--
+--    Seat mapping:
+--      CEO / CFO  Tamilselvan S
+--      CSO / CGO  Ramana V
+--      CMO / CSO  Sanmathi S
+--      CPO / CTO  Thangaraj T
+--      CLO / COO  Gokul Priya S
+--      CNO        Silambarasan C
 -- ---------------------------------------------------------------------------
--- update public.profiles set role = 'ceo_cfo', department = 'Executive / Finance'    where email = 'tamilselvan@company.example';
--- update public.profiles set role = 'cso_cgo', department = 'Strategy / Growth'       where email = 'ramana@company.example';
--- update public.profiles set role = 'cmo_cso', department = 'Marketing / Brand'       where email = 'sanmathi@company.example';
--- update public.profiles set role = 'cpo_cto', department = 'Product / Technology'    where email = 'raj@company.example';
--- update public.profiles set role = 'clo_coo', department = 'Legal / Operations'      where email = 'gokul@company.example';
--- update public.profiles set role = 'cno',     department = 'Networking / Relationships' where email = 'cno@company.example';
+-- update public.profiles set full_name = 'Tamilselvan S',  role = 'ceo_cfo', department = 'Executive / Finance'       where email = 'tamilselvan@company.example';
+-- update public.profiles set full_name = 'Ramana V',       role = 'cso_cgo', department = 'Strategy / Growth'          where email = 'ramana@company.example';
+-- update public.profiles set full_name = 'Sanmathi S',     role = 'cmo_cso', department = 'Marketing / Brand'          where email = 'sanmathi@company.example';
+-- update public.profiles set full_name = 'Thangaraj T',    role = 'cpo_cto', department = 'Product / Technology'       where email = 'thangaraj@company.example';
+-- update public.profiles set full_name = 'Gokul Priya S',  role = 'clo_coo', department = 'Legal / Operations'         where email = 'gokulpriya@company.example';
+-- update public.profiles set full_name = 'Silambarasan C', role = 'cno',     department = 'Networking / Relationships' where email = 'silambarasan@company.example';
 
 -- ============================================================================
 -- End of schema

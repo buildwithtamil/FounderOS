@@ -32,15 +32,15 @@ functions their role is entitled to, and the database enforces the same rules.
 
 | Seat | Name | Role key | Access |
 |---|---|---|---|
-| CEO / CFO | Tamilselvan S. | `ceo_cfo` | Executive / full company access |
-| CSO / CGO | Ramana | `cso_cgo` | Strategy, Growth, Partnerships |
-| CMO / CSO | Sanmathi | `cmo_cso` | Marketing, Brand, Campaigns, Strategy |
-| CPO / CTO | Raj | `cpo_cto` | Product, Technology, Roadmap, Engineering |
-| CLO / COO | Gokul Priya | `clo_coo` | Legal, Compliance, Operations, Processes |
-| CNO | *configurable* | `cno` | Networking, Relationships, Partnerships |
+| CEO / CFO | Tamilselvan S | `ceo_cfo` | Executive / full company access |
+| CSO / CGO | Ramana V | `cso_cgo` | Strategy, Growth, Partnerships |
+| CMO / CSO | Sanmathi S | `cmo_cso` | Marketing, Brand, Campaigns, Strategy |
+| CPO / CTO | Thangaraj T | `cpo_cto` | Product, Technology, Roadmap, Engineering |
+| CLO / COO | Gokul Priya S | `clo_coo` | Legal, Compliance, Operations, Processes |
+| CNO | Silambarasan C | `cno` | Networking, Relationships, Partnerships |
 
-> The CNO seat is intentionally left without a person name — assign it to a real
-> account when you provision users.
+> Full names, emails and roles are stored in Supabase and managed from the
+> executive seat. The table above is the intended default mapping.
 
 ---
 
@@ -297,12 +297,12 @@ Run the role assignments in the Supabase SQL Editor (bottom of `schema.sql`),
 replacing the emails with the real ones:
 
 ```sql
-update public.profiles set role = 'ceo_cfo', department = 'Executive / Finance'    where email = 'tamilselvan@company.example';
-update public.profiles set role = 'cso_cgo', department = 'Strategy / Growth'       where email = 'ramana@company.example';
-update public.profiles set role = 'cmo_cso', department = 'Marketing / Brand'       where email = 'sanmathi@company.example';
-update public.profiles set role = 'cpo_cto', department = 'Product / Technology'    where email = 'raj@company.example';
-update public.profiles set role = 'clo_coo', department = 'Legal / Operations'      where email = 'gokul@company.example';
-update public.profiles set role = 'cno',     department = 'Networking / Relationships' where email = 'cno@company.example';
+update public.profiles set full_name = 'Tamilselvan S',  role = 'ceo_cfo', department = 'Executive / Finance'       where email = 'tamilselvan@company.example';
+update public.profiles set full_name = 'Ramana V',       role = 'cso_cgo', department = 'Strategy / Growth'          where email = 'ramana@company.example';
+update public.profiles set full_name = 'Sanmathi S',     role = 'cmo_cso', department = 'Marketing / Brand'          where email = 'sanmathi@company.example';
+update public.profiles set full_name = 'Thangaraj T',    role = 'cpo_cto', department = 'Product / Technology'       where email = 'thangaraj@company.example';
+update public.profiles set full_name = 'Gokul Priya S',  role = 'clo_coo', department = 'Legal / Operations'         where email = 'gokulpriya@company.example';
+update public.profiles set full_name = 'Silambarasan C', role = 'cno',     department = 'Networking / Relationships' where email = 'silambarasan@company.example';
 ```
 
 Only the CEO/CFO seat can change roles through the application itself; the SQL
